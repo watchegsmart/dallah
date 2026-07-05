@@ -1,0 +1,29 @@
+    * {
+      font-family: "Readex Pro", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings: "HEXP" 0;
+    }
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .center-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h3 {
+      font-weight: 700;
+    }
+
+    p span {
+      font-size: 22px;
+      font-weight: 700;
+    }
