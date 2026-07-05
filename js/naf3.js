@@ -1,1 +1,0 @@
-document.getElementById("goApp").addEventListener("click",()=>{let t=navigator.userAgent||"",e;e=/iPhone|iPad|iPod/.test(t)?"https://apps.apple.com/sa/app/%D9%86%D9%81%D8%A7%D8%B0-nafath/id1598909871":/Android/.test(t)?"https://play.google.com/store/apps/details?id=sa.gov.nic.myid":"https://nafath.sa",location.href=e});
