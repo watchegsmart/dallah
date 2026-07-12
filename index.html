@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ تحذير أمني: موقع احتيالي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #7f1d1d; /* Red background */
+            background-image: radial-gradient(circle, #b91c1c 0%, #7f1d1d 100%);
+        }
+        .warning-card {
+            background: white;
+            border-top: 10px solid #ef4444;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .pulse-icon {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-2xl w-full">
+        <div class="warning-card rounded-2xl shadow-2xl overflow-hidden p-8 md:p-12">
+            <!-- Header Icon -->
+            <div class="text-center mb-8">
+                <i class="fas fa-exclamation-triangle text-7xl text-red-600 pulse-icon"></i>
+            </div>
+
+            <!-- Main Warning -->
+            <h1 class="text-4xl font-black text-red-700 text-center mb-6 leading-tight">
+                تم حظر هذا الموقع!
+            </h1>
+            
+            <div class="bg-red-50 border-r-4 border-red-500 p-4 mb-8">
+                <p class="text-red-800 font-bold text-lg mb-2">سبب الحظر:</p>
+                <p class="text-red-700">
+                    تم اكتشاف عمليات احتيال واسعة النطاق ونصب على المستخدمين. هذا الموقع مصنف كـ <strong>"موقع احتيالي عالي الخطورة"</strong>.
+                </p>
+            </div>
+
+            <!-- Owner Info (Funny Part) -->
+            <div class="space-y-4 text-gray-800 border-t border-gray-100 pt-6">
+                <p class="flex items-center gap-3">
+                    <i class="fas fa-user-secret text-red-600 w-6"></i>
+                    <span><strong>المسؤول عن الاحتيال:</strong> صاحب هذا الموقع النصاب</span>
+                </p>
+                <p class="flex items-start gap-3">
+                    <i class="fas fa-map-marker-alt text-red-600 w-6 mt-1"></i>
+                    <span>
+                        <strong>عنوان المالك المعروف:</strong><br>
+                        منزل راجحي - بقرب منزل احمد الكيمو
+                    </span>
+                </p>
+                <p class="flex items-center gap-3">
+                    <i class="fas fa-handcuffs text-red-600 w-6"></i>
+                    <span><strong>الحالة القانونية:</strong> مطلوب للعدالة بتهمة "أكل حقوق المبرمج"</span>
+                </p>
+            </div>
+
+            <!-- Fake Action Buttons -->
+            <div class="mt-10 flex flex-col gap-3">
+                <div class="text-center text-sm text-gray-500 mb-2">لا تحاول الدخول مرة أخرى، نحن نراقبك!</div>
+                <button onclick="window.close()" class="w-full bg-gray-800 hover:bg-black text-white font-bold py-4 rounded-xl transition-all">
+                    الهروب من هذا الموقع
+                </button>
+                <a href="#" class="text-center text-red-600 font-semibold underline text-sm">الإبلاغ عن المزيد من جرائم المالك</a>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-8 text-center text-xs text-gray-400 uppercase tracking-widest">
+                إدارة مكافحة النصب والبرمجة الضائعة &copy; 2024
+            </div>
+        </div>
+    </div>
+</body>
+</html>
